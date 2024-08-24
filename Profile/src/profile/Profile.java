@@ -4,7 +4,7 @@ public class Profile
 {
     protected static int detailscheck(String pass,String repass,String usid)
     {
-        File f=new File("Enter your Folder location\\"+usid+".txt");
+        File f=new File(".\\"+usid+".txt");
         if(!pass.equals(repass))
         {return 2;}
         else if(f.exists())
@@ -25,7 +25,7 @@ public class Profile
     protected static void createacc(String ftnm,String ltnm,String gndr,String emid,String mbno,String usid,String adrs,String pass,String repass) throws IOException
     {
         
-        File f=new File("Enter your Folder location\\fck.txt");
+        File f=new File(".\\fck.txt");
         if(f.exists())
         {
             FileWriter out = new FileWriter(f,true);
@@ -43,7 +43,7 @@ public class Profile
             out.close();
         }
         String temp=usid+".txt";
-        FileWriter fout = new FileWriter("Enter your Folder location\\"+temp,true);
+        FileWriter fout = new FileWriter(".\\"+temp,true);
         BufferedWriter bfw =new BufferedWriter(fout);
         bfw.write(ftnm+"%");
         bfw.append(ltnm+"%");
@@ -60,7 +60,7 @@ public class Profile
         if(f.exists())
         {
             String ts="",temp="";
-            FileInputStream fin=new FileInputStream("\\Enter your Folder location\\fck.txt");
+            FileInputStream fin=new FileInputStream(".\\fck.txt");
             int tc=fin.read();
             while(tc!=-1)
             {
